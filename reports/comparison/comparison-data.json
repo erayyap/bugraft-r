@@ -1,0 +1,832 @@
+{
+  "paper_pdf": "https://arxiv.org/pdf/2503.20036",
+  "paper_table": "III",
+  "paper_pdf_sha256": "0e2ccb84ce2ba98193e0e7448e14660d12dba9d2518ddf0a58dba1753972d046",
+  "attempts": 86,
+  "assumed_successes": 70,
+  "total_pi_estimated_cost_usd": 23.902065,
+  "success_assumption": "Per user instruction, observed crash/hang and reported-freeze candidates count as successful; not independently verified target matches. Four reported freezes were separately user-confirmed.",
+  "cost_definition": "Mean Pi-estimated model cost over ALL86 attempts, including provider errors/continuations; not billed cost or host/VM expenses.",
+  "time_definition": "Mean agent wall-clock per attempt, including continuation and VM pauses, excluding preparation and post-evaluation diagnostics. Not batch elapsed time or time divided by concurrency4. Paper values are Table III Active Time, not human MTTR.",
+  "comparability": "Different harnesses and success adjudication; descriptive comparison, not a controlled superiority claim. Human83% is the paper agreement-based estimate.",
+  "rows": [
+    {
+      "system": "Human expert",
+      "success_pct": 83.0,
+      "cost_usd": 28.2,
+      "time_min": 20.0,
+      "source": "PDF Table III; human success is agreement-based"
+    },
+    {
+      "system": "BugCraft GPT-4.1",
+      "success_pct": 34.9,
+      "cost_usd": 1.16,
+      "time_min": 10.0,
+      "source": "PDF Table III"
+    },
+    {
+      "system": "BugCraft GPT-4o",
+      "success_pct": 30.2,
+      "cost_usd": 1.45,
+      "time_min": 15.56,
+      "source": "PDF Table III"
+    },
+    {
+      "system": "OpenAI CUA",
+      "success_pct": 25.5,
+      "cost_usd": 0.65,
+      "time_min": 6.37,
+      "source": "PDF Table III"
+    },
+    {
+      "system": "UI-TARS-1.5-7B",
+      "success_pct": 0.0,
+      "cost_usd": 0.02,
+      "time_min": 3.27,
+      "source": "PDF Table III"
+    },
+    {
+      "system": "Bugcraft-R",
+      "success_pct": 81.3953488372093,
+      "cost_usd": 0.277930988372093,
+      "time_min": 2.6307827914517206,
+      "source": "Current86 attempts; user-assumed crash/hang/freeze successes"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "MC-277929",
+      "attempt": "reports/five-case-rerun-01/lane-3/MC-277929-891aa020",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.23223600000000005,
+      "agent_seconds": 75.45535392605234,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-277955",
+      "attempt": "reports/five-case-rerun-01/lane-2/MC-277955-1674ba71",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.186489,
+      "agent_seconds": 108.6486709289602,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-276621",
+      "attempt": "reports/five-case-rerun-01/lane-4/MC-276621-ad5dbb6c",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.281442,
+      "agent_seconds": 106.12741129397182,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-277967",
+      "attempt": "reports/five-case-rerun-01/lane-1/MC-277967-aee44581",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.346978,
+      "agent_seconds": 188.26297234400408,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-276533",
+      "attempt": "reports/five-case-rerun-01/lane-3/MC-276533-d5151b35",
+      "outcome": "hang_observed_unconfirmed_target",
+      "assumed_success": true,
+      "cost_usd": 0.33854599999999996,
+      "agent_seconds": 267.5125413099886,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-276476",
+      "attempt": "reports/remaining-81-run/lane-1/MC-276476-90f5e988",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.21595600000000004,
+      "agent_seconds": 111.89197015896207,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-276383",
+      "attempt": "reports/remaining-81-run/lane-2/MC-276383-6d8cece7",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.21549399999999996,
+      "agent_seconds": 119.14690948498901,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-275566",
+      "attempt": "reports/remaining-81-run/lane-4/MC-275566-08771cef",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.202406,
+      "agent_seconds": 107.4399879790144,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-275883",
+      "attempt": "reports/remaining-81-run/lane-3/MC-275883-9e4c0805",
+      "outcome": "hang_observed_unconfirmed_target",
+      "assumed_success": true,
+      "cost_usd": 0.26801400000000003,
+      "agent_seconds": 193.21956412203144,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-275246",
+      "attempt": "reports/remaining-81-run/lane-1/MC-275246-1a9effdc",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.256101,
+      "agent_seconds": 126.27137876203051,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-272406",
+      "attempt": "reports/remaining-81-run/lane-4/MC-272406-25435150",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.46686,
+      "agent_seconds": 209.28655580198392,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-272043",
+      "attempt": "reports/remaining-81-run/lane-3/MC-272043-3e4ace01",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.153287,
+      "agent_seconds": 101.08161935996031,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-271461",
+      "attempt": "reports/remaining-81-run/lane-1/MC-271461-785b6fd9",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.32659,
+      "agent_seconds": 163.73399553599302,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-271001",
+      "attempt": "reports/remaining-81-run/lane-4/MC-271001-a8852f60",
+      "outcome": "provider_blocked",
+      "assumed_success": false,
+      "cost_usd": 0.0,
+      "agent_seconds": 23.162798268022016,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-270475",
+      "attempt": "reports/remaining-81-run/lane-3/MC-270475-a9079d0a",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.181675,
+      "agent_seconds": 81.55508699500933,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-275230",
+      "attempt": "reports/remaining-81-run/lane-2/MC-275230-d2382571",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.9007179999999999,
+      "agent_seconds": 452.0630522109568,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-270097",
+      "attempt": "reports/remaining-81-run/lane-1/MC-270097-00ae7c0e",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.154384,
+      "agent_seconds": 99.70882315700874,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-270001",
+      "attempt": "reports/remaining-81-run/lane-3/MC-270001-7bb7936c",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.148183,
+      "agent_seconds": 75.12216810899554,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-269670",
+      "attempt": "reports/remaining-81-run/lane-2/MC-269670-ca426b23",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.273069,
+      "agent_seconds": 94.39620697998907,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-269644",
+      "attempt": "reports/remaining-81-run/lane-1/MC-269644-2bddb11a",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.150376,
+      "agent_seconds": 99.88768520700978,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-269635",
+      "attempt": "reports/remaining-81-run/lane-3/MC-269635-fa105bad",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.167033,
+      "agent_seconds": 101.55555395799456,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268882",
+      "attempt": "reports/remaining-81-run/lane-2/MC-268882-ff51c857",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.182351,
+      "agent_seconds": 95.5284931740025,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268879",
+      "attempt": "reports/remaining-81-run/lane-1/MC-268879-31f1b2cd",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.372395,
+      "agent_seconds": 162.66561528499005,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268853",
+      "attempt": "reports/remaining-81-run/lane-3/MC-268853-2180a357",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.295334,
+      "agent_seconds": 121.64848586003063,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268842",
+      "attempt": "reports/remaining-81-run/lane-2/MC-268842-45424ce7",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.212419,
+      "agent_seconds": 101.11932690098183,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-270004",
+      "attempt": "reports/remaining-81-run/lane-4/MC-270004-8aca5039",
+      "outcome": "provider_blocked",
+      "assumed_success": false,
+      "cost_usd": 0.9223920000000002,
+      "agent_seconds": 476.2061752099544,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268172",
+      "attempt": "reports/remaining-81-run/lane-3/MC-268172-928f8c3f",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.16060200000000002,
+      "agent_seconds": 77.9175908640027,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-268408",
+      "attempt": "reports/remaining-81-run/lane-1/MC-268408-024c17c0",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.353707,
+      "agent_seconds": 197.92619677097537,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-260355",
+      "attempt": "reports/remaining-81-run/lane-3/MC-260355-0972e896",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.19945100000000002,
+      "agent_seconds": 97.66985767101869,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-267937",
+      "attempt": "reports/remaining-81-run/lane-2/MC-267937-a911bef0",
+      "outcome": "provider_blocked",
+      "assumed_success": false,
+      "cost_usd": 0.39669600000000005,
+      "agent_seconds": 254.08515824301867,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-261620",
+      "attempt": "reports/remaining-81-run/lane-4/MC-261620-0738e586",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.6224599999999999,
+      "agent_seconds": 236.3199782660231,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-259240",
+      "attempt": "reports/remaining-81-run/lane-2/MC-259240-37fd0752",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.12117400000000002,
+      "agent_seconds": 49.62391149997711,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-259355",
+      "attempt": "reports/remaining-81-run/lane-3/MC-259355-700bc5c1",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.200827,
+      "agent_seconds": 134.6966404110426,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-253402",
+      "attempt": "reports/remaining-81-run/lane-4/MC-253402-72b8e056",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.19329100000000002,
+      "agent_seconds": 136.4533735429868,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-251316",
+      "attempt": "reports/remaining-81-run/lane-2/MC-251316-1240d7c2",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.181383,
+      "agent_seconds": 102.91456456203014,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-260194",
+      "attempt": "reports/remaining-81-run/lane-1/MC-260194-bb8219ab",
+      "outcome": "freeze_reported_unconfirmed",
+      "assumed_success": true,
+      "cost_usd": 0.677315,
+      "agent_seconds": 328.422720269009,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-250939",
+      "attempt": "reports/remaining-81-run/lane-3/MC-250939-81efc509",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.14740899999999998,
+      "agent_seconds": 100.70745653402992,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-250919",
+      "attempt": "reports/remaining-81-run/lane-4/MC-250919-80d32989",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.166832,
+      "agent_seconds": 169.43563315999927,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-248523",
+      "attempt": "reports/remaining-81-run/lane-3/MC-248523-489d93a8",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.276917,
+      "agent_seconds": 128.4929623909993,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-248926",
+      "attempt": "reports/remaining-81-run/lane-1/MC-248926-c17f4eff",
+      "outcome": "freeze_reported_unconfirmed",
+      "assumed_success": true,
+      "cost_usd": 0.36558899999999994,
+      "agent_seconds": 241.53627393802162,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-241775",
+      "attempt": "reports/remaining-81-run/lane-4/MC-241775-3d59d0b7",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.137587,
+      "agent_seconds": 81.00925346201984,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-241774",
+      "attempt": "reports/remaining-81-run/lane-3/MC-241774-753a6d90",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.15922499999999998,
+      "agent_seconds": 122.95460621698294,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-237330",
+      "attempt": "reports/remaining-81-run/lane-4/MC-237330-d913cdcd",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.181252,
+      "agent_seconds": 125.9257822940126,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-249712",
+      "attempt": "reports/remaining-81-run/lane-2/MC-249712-694c8fae",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.5908440000000001,
+      "agent_seconds": 468.3351894270163,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-238375",
+      "attempt": "reports/remaining-81-run/lane-1/MC-238375-0c768a6d",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.262586,
+      "agent_seconds": 151.57598287396831,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-235964",
+      "attempt": "reports/remaining-81-run/lane-4/MC-235964-c9b97f85",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.18542099999999997,
+      "agent_seconds": 88.14137160102837,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-235574",
+      "attempt": "reports/remaining-81-run/lane-2/MC-235574-623d4b9b",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.326759,
+      "agent_seconds": 127.17600014503114,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-222517",
+      "attempt": "reports/remaining-81-run/lane-4/MC-222517-b8600de6",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.224248,
+      "agent_seconds": 104.2144868170144,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-231185",
+      "attempt": "reports/remaining-81-run/lane-1/MC-231185-7001b55a",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.6282340000000001,
+      "agent_seconds": 246.99497612396954,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-236656",
+      "attempt": "reports/remaining-81-run/lane-3/MC-236656-a749a106",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.7598349999999999,
+      "agent_seconds": 454.6852660489967,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-210408",
+      "attempt": "reports/remaining-81-run/lane-4/MC-210408-c315e3b4",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.201845,
+      "agent_seconds": 94.82705785200233,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-198725",
+      "attempt": "reports/remaining-81-run/lane-4/MC-198725-90612bcb",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.16715300000000002,
+      "agent_seconds": 68.8632682680036,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-202760",
+      "attempt": "reports/remaining-81-run/lane-1/MC-202760-5c23a2f6",
+      "outcome": "hang_observed_unconfirmed_target",
+      "assumed_success": true,
+      "cost_usd": 0.13673100000000002,
+      "agent_seconds": 114.80003727698931,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-213788",
+      "attempt": "reports/remaining-81-run/lane-2/MC-213788-1b277601",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.7423609999999999,
+      "agent_seconds": 397.3069431069889,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-198514",
+      "attempt": "reports/remaining-81-run/lane-4/MC-198514-84976119",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.16789500000000002,
+      "agent_seconds": 76.28451441699872,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-201885",
+      "attempt": "reports/remaining-81-run/lane-3/MC-201885-e8491810",
+      "outcome": "freeze_reported_unconfirmed",
+      "assumed_success": true,
+      "cost_usd": 0.26403,
+      "agent_seconds": 247.63135512301233,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-198414",
+      "attempt": "reports/remaining-81-run/lane-1/MC-198414-3a6f0410",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.27710199999999996,
+      "agent_seconds": 120.67670207901392,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-197122",
+      "attempt": "reports/remaining-81-run/lane-4/MC-197122-4f63a3f8",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.12483800000000002,
+      "agent_seconds": 70.52018273295835,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-195582",
+      "attempt": "reports/remaining-81-run/lane-3/MC-195582-2ff6fcf0",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.108852,
+      "agent_seconds": 73.9159362919745,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-197197",
+      "attempt": "reports/remaining-81-run/lane-2/MC-197197-067c3ea2",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.192138,
+      "agent_seconds": 136.5406097449595,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-195544",
+      "attempt": "reports/remaining-81-run/lane-1/MC-195544-137058ec",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.15302799999999997,
+      "agent_seconds": 80.71833584900014,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-188451",
+      "attempt": "reports/remaining-81-run/lane-4/MC-188451-77d4bc4d",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.11191900000000002,
+      "agent_seconds": 77.8045610950212,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-184730",
+      "attempt": "reports/remaining-81-run/lane-2/MC-184730-b7b51996",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.165823,
+      "agent_seconds": 71.11610565701267,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-181313",
+      "attempt": "reports/remaining-81-run/lane-1/MC-181313-e1ab2fb9",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.15029099999999998,
+      "agent_seconds": 72.58913094497984,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-185285",
+      "attempt": "reports/remaining-81-run/lane-3/MC-185285-ce44b4e9",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.276617,
+      "agent_seconds": 152.00720072101103,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-180257",
+      "attempt": "reports/remaining-81-run/lane-4/MC-180257-f281d66b",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.16449300000000003,
+      "agent_seconds": 109.4508736699936,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-178259",
+      "attempt": "reports/remaining-81-run/lane-2/MC-178259-b6b66c07",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.192435,
+      "agent_seconds": 79.79221164400224,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-174498",
+      "attempt": "reports/remaining-81-run/lane-1/MC-174498-0ed5f1d7",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.136805,
+      "agent_seconds": 73.7499676499865,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-172374",
+      "attempt": "reports/remaining-81-run/lane-3/MC-172374-0018aa05",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.13573000000000002,
+      "agent_seconds": 80.39736976695713,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-166004",
+      "attempt": "reports/remaining-81-run/lane-2/MC-166004-ddbab60b",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.155424,
+      "agent_seconds": 106.79534685995895,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-171020",
+      "attempt": "reports/remaining-81-run/lane-4/MC-171020-efb480c2",
+      "outcome": "freeze_reported_unconfirmed",
+      "assumed_success": true,
+      "cost_usd": 0.345384,
+      "agent_seconds": 199.83396090200404,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-162616",
+      "attempt": "reports/remaining-81-run/lane-3/MC-162616-8d245037",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.31487200000000004,
+      "agent_seconds": 113.17609000002267,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-161902",
+      "attempt": "reports/remaining-81-run/lane-4/MC-161902-ecde8bd3",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.18869600000000003,
+      "agent_seconds": 105.19193734100554,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-164038",
+      "attempt": "reports/remaining-81-run/lane-1/MC-164038-dbaec872",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.31632,
+      "agent_seconds": 375.4132182559697,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-162586",
+      "attempt": "reports/remaining-81-run/lane-2/MC-162586-e0fe4fe5",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.3318420000000001,
+      "agent_seconds": 276.84285383700626,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-161882",
+      "attempt": "reports/remaining-81-run/lane-3/MC-161882-44ee876b",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.435509,
+      "agent_seconds": 228.82972771394998,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-161268",
+      "attempt": "reports/remaining-81-run/lane-4/MC-161268-7188b93c",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.19983900000000004,
+      "agent_seconds": 84.68694772501476,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-160102",
+      "attempt": "reports/remaining-81-run/lane-2/MC-160102-3dc09f6c",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.147071,
+      "agent_seconds": 91.6772163209971,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-158484",
+      "attempt": "reports/remaining-81-run/lane-4/MC-158484-2a35defe",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.112082,
+      "agent_seconds": 74.83999133104226,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-159455",
+      "attempt": "reports/remaining-81-run/lane-3/MC-159455-d150498d",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.17098500000000005,
+      "agent_seconds": 80.74904399301158,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-160248",
+      "attempt": "reports/remaining-81-run/lane-1/MC-160248-f9f268c4",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.394886,
+      "agent_seconds": 184.21276495797792,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-156389",
+      "attempt": "reports/remaining-81-run/lane-2/MC-156389-804311a3",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.23347800000000002,
+      "agent_seconds": 148.3304773659911,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-154668",
+      "attempt": "reports/remaining-81-run/lane-4/MC-154668-27a517dc",
+      "outcome": "unrelated_or_unconfirmed_crash",
+      "assumed_success": true,
+      "cost_usd": 0.182603,
+      "agent_seconds": 103.22675710398471,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-149792",
+      "attempt": "reports/remaining-81-run/lane-1/MC-149792-5b036f23",
+      "outcome": "provider_blocked",
+      "assumed_success": false,
+      "cost_usd": 0.23985599999999999,
+      "agent_seconds": 208.74885612801882,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-147152",
+      "attempt": "reports/remaining-81-run/lane-2/MC-147152-8fe34d7b",
+      "outcome": "no_crash",
+      "assumed_success": false,
+      "cost_usd": 0.15932300000000002,
+      "agent_seconds": 112.19272349099629,
+      "usage_warnings": []
+    },
+    {
+      "case_id": "MC-153355",
+      "attempt": "reports/remaining-81-run/lane-3/MC-153355-a70574bd",
+      "outcome": "provider_blocked",
+      "assumed_success": false,
+      "cost_usd": 1.133437,
+      "agent_seconds": 791.1852912169998,
+      "usage_warnings": []
+    }
+  ]
+}

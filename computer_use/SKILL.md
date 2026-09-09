@@ -1,0 +1,14 @@
+---
+name: computer-use
+description: Interact with the Windows desktop using screenshots, mouse and keyboard through the computer tool.
+---
+# Computer use
+Use `computer` to observe and interact with the guest desktop. Screenshots are full resolution; coordinates are pixels from the top-left corner. Inspect a screenshot before choosing coordinates. Each action returns the resulting screenshot. Do not assume the previous screen remains unchanged.
+
+Actions: screenshot; click(x,y,button=1,clicks=1); move(x,y); move_relative(dx,dy); drag(x,y,to_x,to_y,button=1,duration); key(keys,duration); type(text); scroll(scroll); wait(duration). `keys` is a simultaneous chord (for example `["ctrl","a"]`), and all keys release when the call finishes. A hold or wait may be at most five seconds. Text is keyboard input, not shell execution. Use screenshots to check focus and the effect of input. Use move_relative for pointer-locked applications, with small relative deltas (positive dx moves right, positive dy moves down); absolute move/click is for normal menus. Relative deltas are bounded to 500 pixels per axis. If the transport fails or screenshots stop updating, report the failure rather than assuming success.
+
+VM timing control: `pause_vm` freezes the entire guest without opening Minecraft's menu. `resume_vm` resumes it. Pausing is your choice, never automatic. Use pause_vm when you want a stable scene while thinking; screenshot still works while paused. Other input and wait actions require resume_vm first. Use wait after resuming when the game needs time to load or simulate. Every result reports VM state. The 20-minute wall-clock deadline continues even while paused; pausing does not grant additional time. The harness resumes the VM when the attempt ends so cleanup can run.
+
+Only interact with the task application. Do not open authentication/account settings, developer tooling, external websites, or unrelated user files. Do not enter or inspect credentials. Do not deliberately terminate the application or induce a generic crash unless it is the reported behavior being tested.
+
+Batch/code-style chaining: send `{"action":"batch","actions":[{"action":"resume_vm"},{"action":"key","keys":["w"],"duration":1},{"action":"pause_vm"},{"action":"screenshot"}]}`. Actions run sequentially in one call, with a final screenshot and indexed action log. This is a validated action list, not arbitrary Python execution. Use separate calls when the next action depends on an intermediate screenshot. Batches accept 1–16 non-nested actions and at most 30 seconds of requested input/wait time; these are per-call bounds, not a limit on assistant turns. Every step is validated before execution. The first runtime error stops remaining steps, with completed/failed steps reported. Input keys/buttons are released between steps. Resume before movement, clicking, typing, or waiting if the VM is paused.
