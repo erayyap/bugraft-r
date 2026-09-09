@@ -46,7 +46,7 @@
       "source": "PDF Table III"
     },
     {
-      "system": "Bugcraft-R",
+      "system": "Bugcraft-R (GPT-6-Astra)",
       "success_pct": 81.3953488372093,
       "cost_usd": 0.277930988372093,
       "time_min": 2.6307827914517206,

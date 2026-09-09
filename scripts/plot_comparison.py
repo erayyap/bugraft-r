@@ -30,7 +30,7 @@ def build_data():
         {'system':'BugCraft GPT-4o','success_pct':30.2,'cost_usd':1.45,'time_min':15.56,'source':'PDF Table III'},
         {'system':'OpenAI CUA','success_pct':25.5,'cost_usd':.65,'time_min':6.37,'source':'PDF Table III'},
         {'system':'UI-TARS-1.5-7B','success_pct':0.0,'cost_usd':.02,'time_min':3.27,'source':'PDF Table III'},
-        {'system':'Bugcraft-R','success_pct':100*count/86,'cost_usd':total/86,'time_min':statistics.mean(c['agent_seconds'] for c in cases)/60,'source':'Current86 attempts; user-assumed crash/hang/freeze successes'},
+        {'system':'Bugcraft-R (GPT-6-Astra)','success_pct':100*count/86,'cost_usd':total/86,'time_min':statistics.mean(c['agent_seconds'] for c in cases)/60,'source':'Current86 attempts; user-assumed crash/hang/freeze successes'},
     ]
     assert all(r['cost_usd']>0 and r['time_min']>=0 and 0<=r['success_pct']<=100 for r in rows)
     return {'paper_pdf':SOURCE,'paper_table':'III','paper_pdf_sha256':hashlib.sha256((ROOT/'reports/paper-reference/2503.20036.pdf').read_bytes()).hexdigest(),'attempts':86,'assumed_successes':count,'total_pi_estimated_cost_usd':total,'success_assumption':'Per user instruction, observed crash/hang and reported-freeze candidates count as successful; not independently verified target matches. Four reported freezes were separately user-confirmed.','cost_definition':'Mean Pi-estimated model cost over ALL86 attempts, including provider errors/continuations; not billed cost or host/VM expenses.','time_definition':'Mean agent wall-clock per attempt, including continuation and VM pauses, excluding preparation and post-evaluation diagnostics. Not batch elapsed time or time divided by concurrency4. Paper values are Table III Active Time, not human MTTR.','comparability':'Different harnesses and success adjudication; descriptive comparison, not a controlled superiority claim. Human83% is the paper agreement-based estimate.','rows':rows,'cases':cases}
@@ -62,7 +62,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--from-data',action='store_true',help='Render the published curated data without private attempt artifacts');args=parser.parse_args()
     OUT.mkdir(parents=True,exist_ok=True)
     data=json.loads((OUT/'comparison-data.json').read_text()) if args.from_data else build_data()
-    data['rows'][-1]['system']='Bugcraft-R'
+    data['rows'][-1]['system']='Bugcraft-R (GPT-6-Astra)'
     (OUT/'comparison-data.json').write_text(json.dumps(data,indent=2)+'\n')
     with (OUT/'comparison-data.csv').open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(data['rows'][0]));w.writeheader();w.writerows(data['rows'])
